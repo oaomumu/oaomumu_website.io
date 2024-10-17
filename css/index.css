@@ -1,6 +1,343 @@
+/* css/index.css */
+
+/* CSS Variables */
+:root {
+    --red: #A52A2A; /* 主红色 */
+    --lightBlack: #333; /* 浅黑色 */
+    --darkGrey: #a9a9a9; /* 深灰色 */
+    --ghostWhite: #f8f8ff; /* 幽灵白 */
+    --lightGrey: #d3d3d3; /* 浅灰色 */
+}
+
+/* Universal Styles */
+*,
+*:before,
+*:after {
+    box-sizing: border-box; /* 包含边框和内边距在内的宽度和高度计算 */
+}
+
+/* Horizontal line style */
+.line {
+    float: left; /* 浮动到左侧 */
+    width: 100%; /* 占满全宽 */
+    border-top: .25em solid var(--lightBlack); /* 上边框 */
+}
+
+/* Wrapper for content */
+.wrapper {
+    margin: auto; /* 自动边距以居中 */
+    width: 60em; /* 最大宽度960px */
+}
+
+/* Section styles */
+header,
+nav,
+section,
+footer {
+    float: left; /* 浮动到左侧 */
+    width: 100%; /* 占满全宽 */
+}
+
+/* Link styles */
+a {
+    text-decoration: none; /* 去掉下划线 */
+    transition: color .25s; /* 颜色变化过渡 */
+}
+
+/* Button styles */
+.button {
+    display: block; /* 按钮作为块级元素 */
+    padding: .75em 1.25em; /* 按钮内边距 */
+    font-size: 1em; /* 字体大小 */
+    font-weight: bold; /* 字体加粗 */
+    background: var(--red); /* 背景颜色 */
+    color: #fff; /* 字体颜色为白色 */
+    border: 0; /* 不显示边框 */
+    cursor: pointer; /* 鼠标悬停时显示为指针 */
+}
+
+/* Button hover and focus effects */
+.button:focus,
+.button:hover {
+    background: #960000; /* 鼠标悬停或获取焦点时背景颜色 */
+}
+
+.button:active {
+    background: #c10000; /* 按钮被点击时背景颜色 */
+}
+
+/* Layout styles */
+html,
 body {
-  font-family: system-ui;
-  background: #f06d06;
-  color: white;
-  text-align: center;
+    width: 100%; /* 占满全宽 */
+    height: 100%; /* 占满全高 */
+    display: flex; /* 使用灵活布局 */
+    flex-direction: column; /* 垂直排列 */
+    min-height: 100vh; /* 最小高度为视口高度 */
+    margin: 0; /* 去掉默认边距 */
+    color: #333; /* 默认文字颜色 */
+}
+
+/* Image container styles */
+.image-container {
+    text-align: center; /* 居中对齐 */
+    margin: 0; 
+    background-color: #f1f1f1; /* 设置背景颜色 */
+    padding: 15px; /* 添加内边距 */
+    border-radius: 8px; /* 添加圆角 */
+}
+
+/* Image styles */
+#myImage {
+    width: 80px; /* 设置宽度 */
+    height: 80px; /* 设置高度 */
+    display: block; /* 作为块级元素 */
+    margin: 0 auto; /* 确保图片居中 */
+    border-radius: 50%; /* 设置圆形边框 */
+    overflow: hidden; /* 隐藏多余部分 */
+}
+
+/* Image caption styles */
+.image-caption {
+    display: block; /* 让文本成为块级元素 */
+    margin-top: 5px; /* 添加上边距 */
+    font-size: 14px; /* 字体大小 */
+    font-weight: bold; /* 设置字体加粗 */
+    color: #A52A2A; /* 文本颜色 */
+}
+
+/* Events section styles */
+.sec-events > h1 {
+    margin-top: 1em; /* 标题上边距 */
+}
+
+/* Article styles within events */
+.sec-events article {
+    float: left; /* 让文章浮动到左侧 */
+    padding: 0 .25em; /* 添加左右内边距 */
+    width: 25%; /* 设置宽度为25% */
+    text-align: justify; /* 文本对齐 */
+}
+
+/* Article title and paragraph styles */
+.sec-events article h1,
+.sec-events article p {
+    display: block; /* 让标题和段落成为块级元素 */
+    margin: .5em 0; /* 上下外边距 */
+    padding: .25em 1em; /* 内边距 */
+    font-size: 110%; /* 字体大小110% */
+}
+
+/* Link styles within events articles */
+.sec-events article a {
+    float: right; /* 链接浮动到右侧 */
+    padding-right: 1em; /* 右侧内边距 */
+}
+
+/* Event article title styles */
+.sec-events article h1 {
+    font-weight: bold; /* 标题加粗 */
+    text-align: center; /* 标题居中 */
+}
+
+/* General section styles */
+section {
+    margin: 1em 0; /* 上下外边距 */
+}
+
+section h1 {
+    text-transform: uppercase; /* 标题大写 */
+}
+
+/* Horizontal rule styles */
+hr {
+    border-color: var(--lightGrey); /* 分隔线颜色 */
+    border-style: dashed; /* 分隔线样式为虚线 */
+}
+
+/* Vertical line styles for layout */
+.vertical {
+    width: 0; /* 垂直线宽度 */
+    height: 10px; /* 垂直线高度 */
+}
+
+/* Introduction section styles */
+.sec-intro {
+    position: relative; /* 相对定位 */
+}
+
+.sec-intro img {
+    width: 100%; /* 图片宽度为100% */
+}
+
+/* Title styles within the intro section */
+.sec-intro h1 {
+    position: absolute; /* 绝对定位 */
+    bottom: .5em; /* 底部距离 */
+    left: .5em; /* 左侧距离 */
+    padding: .5em; /* 内边距 */
+    background: rgba(0, 0, 0, .5); /* 半透明背景 */
+    color: #fff; /* 字体颜色为白色 */
+}
+
+/* Box styles for layout */
+.box {
+    float: left; /* 让盒子浮动到左侧 */
+    padding: 1em 1em; /* 添加内边距 */
+    width: 25%; /* 设置宽度为25% */
+    height: 400px; /* 设置高度为400px */
+    border-top: .1em solid var(--lightGrey); /* 上边框 */
+    border-bottom: .1em solid var(--lightGrey); /* 下边框 */
+    border-left: .1em solid var(--lightGrey); /* 左边框 */
+    transition: background .25s; /* 背景变化的过渡时间 */
+}
+
+/* Box hover and focus effects */
+.box:focus,
+.box:hover {
+    background: #f5f5f5; /* 悬停或聚焦时背景颜色 */
+}
+
+.box:last-child {
+    border-right: .1em solid var(--lightGrey); /* 最后一个盒子的右边框 */
+}
+
+/* Box title styles */
+.box h1 {
+    text-align: center; /* 标题居中 */
+}
+
+/* Box paragraph styles */
+.box p {
+    margin-top: 4em; /* 段落上边距 */
+    line-height: 1.7; /* 行高 */
+    height: 6em; /* 段落高度 */
+    text-align: justify; /* 段落文本对齐 */
+}
+
+/* Button styles within boxes */
+.box .button {
+    margin: 4em auto; /* 按钮上下外边距，水平居中 */
+}
+
+/* Projects section styles */
+.sec-projects {
+    width: 60%; /* 设置宽度 */
+}
+
+.sec-projects > h1 {
+    margin-top: 1em; /* 标题上边距 */
+    text-align: center; /* 标题居中 */
+}
+
+/* Article styles within projects */
+.sec-projects article {
+    padding: .5em 0; /* 上下内边距 */
+    width: 100%; /* 占满全宽 */
+}
+
+/* Title and paragraph styles within projects */
+.sec-projects article h1,
+.sec-projects article p {
+    font-size: 110%; /* 字体大小110% */
+    padding: 10px; /* 内边距 */
+    line-height: 1.7; /* 行高 */
+}
+
+.sec-projects article h1 {
+    font-weight: bold; /* 标题加粗 */
+}
+
+.sec-projects article p {
+    margin: .5em .5em .5em 0; /* 段落外边距 */
+    text-align: justify; /* 段落文本对齐 */
+}
+
+/* Link styles within projects */
+.sec-projects p a {
+    float: right; /* 链接浮动到右侧 */
+}
+
+/* Button styles within projects */
+.sec-projects button {
+    position: relative; /* 相对定位 */
+    left: 80%; /* 向右偏移 */
+}
+
+/* Standards section styles */
+.sec-standards {
+    width: 40%; /* 设置宽度 */
+}
+
+/* Title styles within standards */
+.sec-standards > h1 {
+    margin-top: 1em; /* 标题上边距 */
+    text-align: center; /* 标题居中 */
+}
+
+/* Article styles within standards */
+.sec-standards article {
+    float: left; /* 让文章浮动到左侧 */
+    padding: .5em 1em; /* 添加内边距 */
+    width: 50%; /* 设置宽度为50% */
+    text-align: justify; /* 文本对齐 */
+    font-size: 110%; /* 字体大小110% */
+    line-height: 1.7; /* 行高 */
+    letter-spacing: -0.2px; 
+
+}
+
+.sec-standards article:last-child {
+    padding: .5em 1em; /* 添加内边距 */
+    width: 50%; /* 设置宽度为50% */
+    text-align: justify; /* 文本对齐 */
+    font-size: 110%; /* 字体大小110% */
+    line-height: 1.7; /* 行高 */
+    letter-spacing: -0.2px; 
+}
+
+/* Title styles within standards articles */
+.sec-standards article h1 {
+    text-align: center; /* 标题居中 */
+}
+
+/* Site info box styles */
+.site-info {
+    max-width: 700px; /* 最大宽度 */
+    height: 350px; /* 设置高度 */
+    display: block; /* 作为块级元素 */
+    margin: 30px auto; /* 垂直外边距，水平居中 */
+    padding: 15px; /* 内边距 */
+    line-height: 1.7; /* 行高 */
+    border-radius: 8px; /* 圆角 */
+    text-align: center; /* 文本居中 */
+}
+
+/* Site info paragraph styles */
+.site-info p {
+    font-size: 16px; /* 字体大小 */
+    color: #333; /* 字体颜色 */
+    margin: 30px auto; /* 垂直外边距，水平居中 */
+    font-weight: bold; /* 字体加粗 */
+    color: #A52A2A; /* 文本颜色 */
+}
+
+/* Footer styles */
+.footer {
+    background-color: #f1f1f1; /* 背景颜色 */
+    text-align: center; /* 文本居中 */
+    padding: 20px; /* 内边距 */
+    font-size: 13px; /* 字体大小 */
+    margin-top: auto; /* 自动边距以推送到底部 */
+}
+
+/* Footer link styles */
+.footer a {
+    color: #8A2BE2; /* 链接颜色 */
+    /* text-decoration: none; /* 去掉下划线 */
+}
+
+/* Footer link hover styles */
+.footer a:hover {
+    text-decoration: underline; /* 悬停时添加下划线 */
 }
