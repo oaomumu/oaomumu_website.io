@@ -97,6 +97,15 @@ body {
     overflow: hidden; /* 隐藏多余部分 */
 }
 
+.image-container > img{
+    width: 80px; /* 设置宽度 */
+    height: 80px; /* 设置高度 */
+    display: block; /* 作为块级元素 */
+    margin: 0 auto; /* 确保图片居中 */
+    border-radius: 50%; /* 设置圆形边框 */
+    overflow: hidden; /* 隐藏多余部分 */
+}
+
 /* Image caption styles */
 .image-caption {
     display: block; /* 让文本成为块级元素 */
